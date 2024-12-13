@@ -7,7 +7,7 @@
 #include <unordered_map>
 #include <set>
 #include <list>
-#include <string>
+#include <cstring>
 #include <sstream>
 #include <algorithm>
 #include <mutex>

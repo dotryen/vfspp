@@ -3,8 +3,13 @@ cmake_minimum_required(VERSION 3.10)
 # Project name and version
 project(vfspp VERSION 1.0 LANGUAGES CXX)
 
-# Add the miniz-cpp library
-add_subdirectory(vendor/miniz-cpp EXCLUDE_FROM_ALL)
+option(VFSPP_USE_MINIZ "Compile with miniz to add zip filesystems." OFF)
+
+if(VFSPP_USE_MINIZ)
+    # Add the miniz-cpp library
+    add_subdirectory(vendor/miniz-cpp EXCLUDE_FROM_ALL)
+    add_compile_definitions(VFSPP_USE_MINIZ)
+endif()
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
